@@ -6,22 +6,26 @@ export const shopItems =
         {
             Name: "Maseczki",
             ikon: <GiGasMask/>,
-            cName: "nav-text"
+            cName: "nav-text",
+            cat: "mask"
         },
         {
             Name: "Artykuły do dezynfekcji",
             ikon: <GiSpiralBottle/>,
-            cName: "nav-text"
+            cName: "nav-text",
+            cat: "hygiene_products"
         },
         {
             Name: "Suplementy",
             ikon: <GiMedicinePills/>,
-            cName: "nav-text"
+            cName: "nav-text",
+            cat: "suplements"
         },
         {
             Name: "Książki",
             ikon: <ImBooks/>,
-            cName: "nav-text"
+            cName: "nav-text",
+            cat: "books"
         }
     ];
 

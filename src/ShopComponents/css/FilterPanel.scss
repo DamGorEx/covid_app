@@ -1,43 +1,42 @@
 .filter-panel-back {
   background-color: whitesmoke;
   height: 100vh;
-  width: 17vw;
-  display: flex;
+  width: 300px; //25vw;
+  min-width: 20vw;
+  max-width: 20vw;
   justify-content: start;
   border-right: 10px solid grey;
+  display: inline-block;
+  text-align: center
+
 }
 
+.buttonArea button {
+  align-items: center;
+  text-align: center;
+  place-items: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
 .bar {
-  font-size: 1.7vw;
+  font-size: 1.5vw;
   background: none;
   text-align: left;
-  padding-right: 0px;
-  padding-left: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
   list-style-type: none;
   cursor: pointer;
 
   &:hover {
     background: lightgray;
-    font-size: 2vw;
     transition: 0.5s;
+  }
+
+  li {
+    white-space: nowrap;
   }
 }
 
-.filter-panel-item {
-  font-size: 100px;
-}
-
-.CovidShop {
-  background-color: bisque;
-  border-top: 10px solid grey;
-}
-
-.nav-menu {
-  background-color: darkcyan;
-  width: 250px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-}
 

@@ -1,0 +1,217 @@
+.headerRaport,
+.update,
+.cases,
+.deaths,
+.recovery,
+.casesName,
+.deathsName,
+.recoveryName,
+.tableSearch{
+    font-family: Playfair Display, Georgia, Times New Roman, serif;
+}
+
+.headerRaport {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(23, 162, 184, 0.3);
+    color: #138EA1;
+}
+
+.update {
+    color: grey;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.imageCases,
+.imageDeath,
+.imageRecovery {
+    width: 20%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hidden {
+    display: none;
+}
+.globalCases {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.imageCases {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.imageDeath {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.imageRecovery {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.cases {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.casesName {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.deaths {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.deathsName {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.recovery {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.recoveryName {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+
+.cases,
+.deaths,
+.recovery {
+    display: flex;
+    font-size: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #138EA1;
+}
+
+.casesName,
+.deathsName,
+.recoveryName {
+    display: flex;
+    font-size: 65px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.casesName {
+    color: #DB3E4B;
+}
+
+.deathsName {
+    color: black;
+}
+
+.recoveryName {
+    color: #3DD62F;
+}
+
+.reportedCases {
+    color: #2D435E;
+    padding-top: 10px;
+    padding-left: 50px;
+    font-size: 25px;
+}
+
+.search {
+    padding-left: 100px;
+}
+.table {
+    margin-left: 50px;
+}
+.tableCases {
+    width: 90%;
+    
+    font-family: Playfair Display, Georgia, Times New Roman, serif;
+    margin-top: 20px;
+}
+
+    .tableCases,
+    .tableCases th,
+    .tableCases td {
+       
+        padding: 5px;
+    }
+
+        .tableCases th {
+            color: white;
+            background: #138EA1;
+            text-align: center;
+        }
+.countryName {
+    text-align: center;
+}
+        .otherTd,
+        .otherTdTotal{
+            text-align: right;
+        }
+
+
+        .tableCases tbody:nth-child(even) {
+            background-color: rgba(23, 162, 184, 0.3);
+        }
+
+        .tableCases th:nth-child(even) {
+            background-color: #117E8F;
+        }
+
+        .tableCases tr:hover {
+            background-color: #ddd;
+        }
+.searchCase,
+input {
+    padding-left: 50px;
+}
+.tableSearch {
+    padding-bottom: 10px;
+}
+.tableCases thead th {
+    position: sticky; 
+    top: 0;
+}
+
+
+@media all and (max-width: 720px) {
+    .table {
+        margin-left: 20px;
+    }
+
+    .globalCases {
+        display: flex;
+        flex-wrap: wrap;
+        grid-column-gap: 500px;
+        margin-left: 10px;
+        text-align: center;
+        grid-row-gap: 10px;
+    }
+
+    .otherTdTotal,
+    .totalTable {
+        display: none;
+    }
+    
+    .search,
+    .reportedCases,
+    .searchCase {
+        padding-left: 20px;
+    }
+    
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './CovidNewsCs.css';
 
 const CovidNewsDate = ({ date }: {date:any}) => {
       return (
@@ -8,6 +8,10 @@ const CovidNewsDate = ({ date }: {date:any}) => {
         <h1 className="headerRaport"> RAPORT - PANDEMIA KORONAWIRUSA</h1>
        
             <p className="update"> aktualizowany: {date} </p>
+
+
+            
+
        
     </div>);
     };

@@ -2,28 +2,48 @@ import React from "react";
 import {shopItems} from "./ShopItems"
 import "../css/FilterPanel.scss"
 
-class FilterPanel extends React.Component {
+interface myProps {
+    filterProduct: (text: string) => void
+}
+
+class FilterPanel extends React.Component<myProps, {}> {
+    state = {
+        applyFilter: false
+    }
+
+    constructor(props: myProps) {
+        super(props);
+    }
+
     render() {
-        return (<div className="filter-panel-back">
+        return (
+            <div className="filter-panel-back">
                 <div className="filter-panel-item">
                     {shopItems.map((item, index) => {
                         return (
                             <ul className="bar">
-                                <li key={index} className={item.cName} onClick={() => callItems(item.Name)}>
+                                <li key={index} className={item.cName} onClick={() => {
+                                    this.setState({applyFilter: true})
+                                    this.props.filterProduct(item.cat)
+                                }}>
                                     {item.ikon}
                                     {item.Name}
                                 </li>
                             </ul>
                         );
                     })}
+                    <div className="buttonArea">
+                        {this.state.applyFilter &&
+                        <button onClick={() => {
+                            this.setState({applyFilter: false});
+                            this.props.filterProduct("")
+                        }}>Wyczyść filtr</button>
+                        }
+                    </div>
                 </div>
             </div>
         );
-    }
-}
-
-function callItems(name: string) {
-    return console.log(name);
+    };
 }
 
 export default FilterPanel;

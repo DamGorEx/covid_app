@@ -1,0 +1,56 @@
+.shopProducts {
+  align-items: center;
+  align-content: center;
+  margin-left: 7%;
+}
+
+.product-cell {
+  display: inline-flex;
+  flex-wrap: wrap;
+  grid-auto-flow: column;
+}
+
+.product {
+  padding: 2%;
+  margin-top: 1rem;
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+  max-width: 400px;
+  text-align: center;
+  font-family: arial;
+  width: 100%;
+  margin-right: 1rem;
+  flex: 1 46%;
+
+}
+
+p {
+  word-wrap: break-word;
+}
+
+.product button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 90%;
+  font-size: 18px;
+}
+
+.product button:hover {
+  opacity: 0.7;
+}
+
+.price {
+  color: aliceblue;
+  font-size: 22px;
+}
+
+img {
+  max-width: 200px;
+  max-height: 100px;
+}
