@@ -1,0 +1,78 @@
+.basket-table {
+    width: 90%;
+    margin-left: 1vw;
+    max-width: 18vw;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 1120px) {
+    .basket-table {
+        display: none;
+    }
+
+    .basket-table {
+        display: none;
+    }
+}
+
+.basket-table-buttons {
+    cursor: pointer;
+}
+
+[aniMarker='1'] {
+    animation-name: pr-add;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+[aniMarker='-1'] {
+    animation-name: pr-sub;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+.basket-table-first-cell {
+    text-align: left;
+}
+
+@keyframes pr-add {
+    0% {
+        background-color: inherit;
+    }
+    20% {
+        background-color: inherit;
+    }
+    50% {
+        background-color: green;
+    }
+    55% {
+        background-color: green;
+    }
+    95% {
+        background-color: inherit;
+    }
+    100% {
+        background-color: inherit;
+    }
+}
+
+@keyframes pr-sub {
+    0% {
+        background-color: inherit;
+    }
+    20% {
+        background-color: inherit;
+    }
+    50% {
+        background-color: firebrick;
+    }
+    55% {
+        background-color: firebrick;
+    }
+    95% {
+        background-color: inherit;
+    }
+    100% {
+        background-color: inherit;
+    }
+}

@@ -25,124 +25,191 @@
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-.headerRaport {
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    padding: 15px;
-    background-color: rgba(23, 162, 184, 0.3);
-    color: #138EA1;
-}
-
-.update {
-    color: grey;
-    margin: auto;
-    width: 50%;
-}
-
-.globalCases {
+.formMedical {
+    font-family: Playfair Display, Georgia, Times New Roman, serif;
+    font-weight: bold;
+    margin-left: 2rem;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 5px;
+    grid-template-columns: [first]150px [lane2]350px;
+    grid-row-gap: 1rem;
+    column-gap: 1rem;
+    color: #138EA1;
+    background-color: rgba(19, 142, 161, 0.2);
+    
 }
 
-.cases,
-.deaths,
-.recovery {
-    display: flex;
-    font-size: 45px;
-    align-items: center;
-    justify-content: center;
+.headerMedical,
+.header2,
+.headerDetails {
+    grid-column: 1 / span 3;
+}
+
+.headerMedical {
     text-align: center;
-    padding: 10px;
 }
 
-.cases {
+.mainForm {
+    margin: 1rem;
+}
+
+
+.nameInput,
+.surnameInput,
+.dateInput,
+.emailInput,
+.phoneInput,
+.addressInput,
+.cityInput,
+.dateFromInput,
+.dateToInput {
+    opacity: 60%;
+    width: 345px;
+    padding: 7px 10px 12px 10px;
+    border-radius: 15px;
+    border: 0px solid #138EA1;
+}
+
+.dateInput,
+.emailInput,
+.phoneInput,
+.addressInput,
+.cityInput {
+    grid-column: 2 / span 2;
+}
+
+.headerDetails,
+.headerMedical {
+    padding-top: 30px;
+}
+
+.header2,
+.headerDetails {
+    border-bottom: 1px solid;
+    padding-left: 10px;
+}
+
+.formMedical label {
+    padding-left: 5px;
+}
+
+.formButtonSubmit {
+    grid-column: 2;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    background-color: #138EA1;
+    border: none;
+    margin: 4px;
+    border-radius: 2px;
+}
+
+.formButtonCancel {
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    text-align: center;
+    background-color: #0A4A54;
+    margin: 4px;
+    border: none;
+    border-radius: 2px;
+}
+
+    .formButtonCancel:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+    .formButtonSubmit:hover,
+    .formButtonCancel:hover {
+        opacity: 60%;
+    }
+
+.formButtonCancel {
+    grid-column: 3;
+}
+
+.formButtons {
+    display: grid;
+    grid-column: 3;
+}
+
+abbr {
+    color: orangered;
+    opacity: 60%;
+}
+
+.cardWykon {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 50px;
+    background-color: rgba(23, 162, 184, 0.3);
+    font-family: Playfair Display, Georgia, Times New Roman, serif;
+}
+
+.wykon {
+    font-size: 6vw;
+    grid-column: 1;
+    text-align: center;
     color: #138EA1;
 }
 
-.deaths {
-    color: #DB3E4B;
+.wykonNames {
+    grid-column: 1;
+    text-align: center;
+    font-size: 4vw;
+    font-family: Playfair Display, Georgia, Times New Roman, serif;
 }
 
-.recovery {
-    color: #3DD62F;
-}
 
-.reportedCases {
-    color: #2D435E;
-    padding-top: 10px;
-    padding-left: 50px;
-    font-size: 25px;
-}
 
-.search {
-    padding-left: 100px;
-}
-
-.tableCases {
-    width: 90%;
-    margin-left: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 20px;
-}
-
-    .tableCases,
-    .tableCases th,
-    .tableCases td {
-        border: 1px solid #2D435E;
-        padding: 5px;
+@media all and (max-width: 945px) {
+    .formMedical {
+        grid-template-columns: 1fr;
+        grid-row-gap: 6px;
+        margin: 5px;
     }
 
-        .tableCases th {
-            color: #2D435E;
-            background: rgba(23, 162, 184, 0.3);
-            text-align: center;
+        .formMedical label {
+            margin-left: 10px;
         }
 
-        .tableCases td {
-            text-align: right;
-        }
-
-        .tableCases tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .tableCases tr:hover {
-            background-color: #ddd;
-        }
-
-@media all and (max-width: 720px) {
-
-
-    .globalCases {
-        display: flex;
-        flex-wrap: wrap;
+    .surnameInput {
+        margin-bottom: 10px;
     }
 
-    .cases,
-    .deaths,
-    .recovery {
-        padding-right: 200px;
+    .headerMedical,
+    .header2,
+    .headerDetails,
+    .dateInput,
+    .emailInput,
+    .phoneInput,
+    .addressInput,
+    .cityInput {
+        grid-column: 1/span 1;
+        margin: 10px;
     }
 
-    .tableCases {
+    .formButtons,
+    .formButtonSubmit,
+    .formButtonCancel {
+        grid-column: 1/span 1;
+    }
+
+
+    .nameInput,
+    .surnameInput,
+    .dateFromInput,
+    .dateToInput {
         margin-left: 10px;
     }
-
-    .search,
-    .reportedCases {
-        padding-left: 10px;
-    }
 }
-
 
 nav a{
     color: rgba(255,255,255,.5);
@@ -152,4 +219,22 @@ nav a:hover{
     color: rgba(255,255,255,.75);
     text-decoration: none;
 
+}
+
+@media all and (max-width: 375px) {
+    .formButtons,
+    .headerMedical,
+    .header2,
+    .headerDetails,
+    .dateInput,
+    .emailInput,
+    .phoneInput,
+    .addressInput,
+    .cityInput,
+    .nameInput,
+    .surnameInput,
+    .dateFromInput,
+    .dateToInput {
+        width: 300px;
+    }
 }

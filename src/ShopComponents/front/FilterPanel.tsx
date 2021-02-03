@@ -1,21 +1,44 @@
 import React from "react";
 import {shopItems} from "./ShopItems"
 import "../css/FilterPanel.scss"
+import * as ShopUtils from "../utils/ShopUtils";
+import Basket from "../front/Basket";
 
-interface myProps {
+interface myPropsFilterPanel {
     filterProduct: (text: string) => void
+    prodToAdd: string
 }
 
-class FilterPanel extends React.Component<myProps, {}> {
-    state = {
-        applyFilter: false
-    }
+enum BasketAction {
+    ADD, REMOVE, SUB
+}
 
-    constructor(props: myProps) {
+class FilterPanel extends React.Component<myPropsFilterPanel, {}> {
+    state = {
+        applyFilter: false,
+        productsInBasket: [],
+        aniMarker: 0,
+        owner: null
+    };
+
+    constructor(props: myPropsFilterPanel) {
         super(props);
     }
 
+    componentDidUpdate(prevProps: Readonly<myPropsFilterPanel>, prevState: Readonly<{}>, snapshot?: any) {
+        if (this.props.prodToAdd !== prevProps.prodToAdd) {
+            this.setState({productsInBasket: ShopUtils.getPrLstFromLocSt()});
+        }
+    }
+
+    componentDidMount() {
+        this.setState({productsInBasket: ShopUtils.getPrLstFromLocSt()});
+    }
+
+
     render() {
+        const prInBasket = this.state.productsInBasket;
+        const prodToAdd = this.props.prodToAdd;
         return (
             <div className="filter-panel-back">
                 <div className="filter-panel-item">
@@ -41,9 +64,32 @@ class FilterPanel extends React.Component<myProps, {}> {
                         }
                     </div>
                 </div>
+                <Basket handleAdd={this.handleAdd} handleMinus={this.handleMinus} handleDelete={this.handleDelete}
+                        prodToAdd={prodToAdd} prInBasket={prInBasket}/>
             </div>
         );
     };
+
+    handleAdd = (product: string, index: number) => {
+        const newProdInBasket = ShopUtils.updateBasket(product, BasketAction.ADD, 1);
+        this.setState({
+            productsInBasket: newProdInBasket
+        });
+    }
+
+    handleMinus = (product: string, index: number) => {
+        const newProdInBasket = ShopUtils.updateBasket(product, BasketAction.SUB, 1);
+        this.setState({
+            productsInBasket: newProdInBasket
+        })
+    }
+
+    handleDelete = (product: string) => {
+        const newProdInBasket = ShopUtils.updateBasket(product, BasketAction.REMOVE, 0);
+        this.setState({
+            productsInBasket: newProdInBasket
+        })
+    }
 }
 
 export default FilterPanel;

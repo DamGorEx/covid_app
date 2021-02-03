@@ -3,14 +3,18 @@ import "../css/ProductPanel.scss"
 import Product from "../interfaces/Product"
 
 interface ProductPanelProps {
-    filteredProduct: string
+    filteredProduct: string,
+
+    addToBasket(product: string, price: number): void
 }
 
-class ProductPanel extends React.Component<ProductPanelProps, {}> {
+
+export default class ProductPanel extends React.Component<ProductPanelProps, {}> {
 
     state = {
         products: [],
-        filter: ""
+        filter: "",
+        itemsAdded: false
     }
 
     constructor(props: ProductPanelProps) {
@@ -64,7 +68,11 @@ class ProductPanel extends React.Component<ProductPanelProps, {}> {
                                         {product.descr}
                                     </p>
                                     <p>
-                                        <button>Add to Cart</button>
+                                        <button onClick={() => {
+                                            this.props.addToBasket(product.name, product.price)
+                                        }}>
+                                            Dodaj do koszyka
+                                        </button>
                                     </p>
                                 </div>
                             </div>
@@ -75,6 +83,3 @@ class ProductPanel extends React.Component<ProductPanelProps, {}> {
         );
     }
 }
-
-
-export default ProductPanel;

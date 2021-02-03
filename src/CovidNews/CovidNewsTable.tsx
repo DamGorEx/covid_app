@@ -31,8 +31,8 @@ const CovidNewsTable= ({ cases }: {cases:any}) => {
              <h2 className ="reportedCases">Odnotowane przypadki w poszczególnych krajach:</h2>    
         </div>
         <label className="searchCase">
-            <span>Search:</span>
-            <input  placeholder="Wpisz nazwę kraju" type="search" id="searchInput"/>
+            <span className ="searchName">Search:</span>
+            <input  className ="inputSearch" placeholder="Wpisz nazwę kraju" type="search" id="searchInput"/>
         </label> 
         <div className ="table">
         <table className="tableCases" id="myTable">

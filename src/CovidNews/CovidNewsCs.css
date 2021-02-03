@@ -6,7 +6,8 @@
 .casesName,
 .deathsName,
 .recoveryName,
-.tableSearch{
+.tableSearch,
+.searchName {
     font-family: Playfair Display, Georgia, Times New Roman, serif;
 }
 
@@ -187,11 +188,30 @@ input {
     position: sticky; 
     top: 0;
 }
+.searchName {
+    padding-right: 10px;
+}
+.inputSearch {
+    width: 125px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+.inputSearch:focus {
+    width: 70%;
+}
 
 
 @media all and (max-width: 720px) {
     .table {
-        margin-left: 20px;
+        margin-left: 10px;
     }
 
     .globalCases {
@@ -212,6 +232,10 @@ input {
     .reportedCases,
     .searchCase {
         padding-left: 20px;
+    }
+
+    .table th {
+        font-size: 10px;
     }
     
 }
