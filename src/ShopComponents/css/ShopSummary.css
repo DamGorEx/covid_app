@@ -161,9 +161,10 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     border: 2px solid #cbcbcb;
     padding: 20px 0 30px 0;
+    border-radius: 25%;
 }
 
 .popup_inner {
@@ -176,5 +177,6 @@
     top: 25%;
     bottom: 25%;
     margin: auto;
-    background: white;
+    color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }

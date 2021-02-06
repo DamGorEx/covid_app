@@ -16,7 +16,7 @@ export default class Popup extends React.Component<PopupProps> {
             <div className='popup'>
                 <div className='popup_inner'>
                     <h1>{this.props.text}</h1>
-                    <button onClick={this.props.closePopup}>Zamknij</button>
+                    <button onClick={this.props.closePopup}>ZAMKNIJ</button>
                 </div>
             </div>
         );
