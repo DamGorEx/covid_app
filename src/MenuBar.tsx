@@ -52,17 +52,25 @@ export default class MenuBar extends React.Component<MenuBarProps> {
                             </div>
 
 
+                            <div className = "zal-zar">
+                                {/* {this.props.user && <Nav.Link href="editdata"> Edytuj dane</Nav.Link>} */}
+                                <div className="option-header-hidden">
+                                    {this.props.user && <>
+                                {/* <Link to="/panel" className="nav-link"> {this.props.user.credentials.role} panel</Link> */}
+                                        <Nav.Link onClick={this.onLogout}><div className="option-header-inner">LOGOUT</div></Nav.Link></>}
+                                </div>
+                                
+                                <div className="podzial">
+                                    <div className="option-header-hidden">
+                                        {!this.props.user && <><Link to="/login" className="nav-link"><div className="option-header-inner">ZALOGUJ SIĘ</div></Link></>}
+                                    </div>
 
-                            {/* {this.props.user && <Nav.Link href="editdata"> Edytuj dane</Nav.Link>} */}
-                            <div className="option-header-hidden">
-                                {this.props.user && <>
-                            {/* <Link to="/panel" className="nav-link"> {this.props.user.credentials.role} panel</Link> */}
-                                    <Nav.Link onClick={this.onLogout}><div className="option-header-inner">Logout</div></Nav.Link></>}
-                            </div>
-                            
-							{!this.props.user && <><Link to="/login" className="nav-link"><div className="option-header-inner">ZALOGUJ SIĘ</div></Link>
-							<Link to="/register" className="nav-link"><div className="option-header-inner">ZAREJESTRUJ SIĘ</div></Link></>}
-							
+                                    <div className="option-header-hidden">
+                                        {!this.props.user && <><Link to="/register" className="nav-link"><div className="option-header-inner">ZAREJESTRUJ SIĘ</div></Link></>}
+                                    </div>
+                                </div>
+							</div>
+
                             {/* <div className="option-header">
                                 {this.props.user && <Nav.Link href="editdata">
                                     <div className="option-header-inner">EDYTUJ DANE</div>

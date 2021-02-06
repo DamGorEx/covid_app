@@ -11,13 +11,23 @@ body {
 
 .menu {
     grid-column-start: 1;
-    grid-column-end: 9;
+    grid-column-end: 8;
     display: grid;
-    grid-template-columns: 9% 10% 7% 44% 7% 9% 11% 3%;
+    grid-template-columns: 9% 10% 7% 44% 23% 7%;
     /* grid-template-columns: auto auto auto auto auto auto auto auto; */
     background: rgba(0, 0, 0, 0.5);
     letter-spacing: 1px;
     font-family: 'SilkSerif-Light', serif;
+}
+
+zal-zar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.podzial {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .pStyle {
