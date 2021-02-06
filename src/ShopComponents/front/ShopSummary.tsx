@@ -7,6 +7,7 @@ import {Redirect} from "react-router-dom";
 import 'reactjs-popup/dist/index.css';
 import Popup from "../front/Popup";
 
+
 class ShopSummary extends React.Component {
 
     state = {

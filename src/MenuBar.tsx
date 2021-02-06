@@ -1,7 +1,6 @@
 import Navbar from "react-bootstrap/Navbar";
 import {Nav} from "react-bootstrap";
 import React from "react";
-import cov_logo from "./cov_logo.svg";
 import {RiShoppingBasketLine} from "react-icons/all";
 import {IUser} from "./components/Login/IUser";
 import {Link} from "react-router-dom";
@@ -49,14 +48,18 @@ export default class MenuBar extends React.Component<MenuBarProps> {
 							<Link to="/register" className="nav-link"><div className="option-header-inner">ZAREJESTRUJ SIĘ</div></Link></>}
 							
                             <div className="option-header">
-                                    <Nav.Link href="editdata"><div className="option-header-inner">EDYTUJ DANE</div></Nav.Link>
+                                {this.props.user && <Nav.Link href="editdata">
+                                    <div className="option-header-inner">EDYTUJ DANE</div>
+                                </Nav.Link>}
                             </div>
 
                         </Nav>
                         {/* <Nav> */}
-                            <div className="option-header">
-                                <Nav.Link href="mybasket"><div className="option-header-inner"></div><RiShoppingBasketLine/></Nav.Link>
-                            </div>
+                        <div className="option-header">
+                            <Nav.Link href="mybasket">
+                                <div className="option-header-inner"></div>
+                                <RiShoppingBasketLine/></Nav.Link>
+                        </div>
                         {/* </Nav> */}
                     </div>
                 </div>

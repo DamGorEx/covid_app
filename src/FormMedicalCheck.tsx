@@ -162,9 +162,6 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
         return (
         <body> 
             <div>
-            
-            
-            
             <main className="mainForm">
                 <form onSubmit={this.onSubmit} className="formMedical">
                     <h1 className="headerMedical"> Zapisz się na badania</h1>
