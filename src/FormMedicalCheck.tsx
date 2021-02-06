@@ -28,7 +28,8 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
         pickedSlot: "",
         email: "",
         submitOk: false,
-        submitFailed: false
+        submitFailed: false,
+        showPopUp: false
     }
 
     constructor(props: PanelProps) {
@@ -70,31 +71,28 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
 
     onSubmit = (e: FormEvent<any>) => {
         e.preventDefault();
+        console.log(e);
         let wrapper = {
             slot: this.state.pickedSlot,
             email: this.state.email,
             city: this.state.city
         }
-        const pathVariables = "slot=" + this.state.pickedSlot + "email=" + this.state.email + "city=" + this.state.city + "date=" + this.state.date;
+        const pathVariables = "slot=" + this.state.pickedSlot + "&email=" + this.state.email + "&city=" + this.state.city + "&date=" + this.state.date;
         const logInfo = localStorage.getItem("logInfo") as string;
         const requestOptions = {
             method: 'POST',
             headers: {'Authorization': logInfo},
         };
-        fetch("http://localhost:8080/medCheck" + this.state.city + "/" + this.state.date + "?" + pathVariables
+        fetch("http://localhost:8080/medCheck?" + pathVariables
             , requestOptions)
             .then(resp => {
                 if (resp.status === 200) {
                     console.log("SUCCESSS")
+                    this.setState({showPopUp: true});
                     return resp.json();
                 } else {
                     this.setState({submitFailed: true});
-                    ;
                 }
-            })
-            .then((data) => {
-                this.setState({freeSlots: data});
-                console.log(this.state.freeSlots);
             })
             .catch((e) => {
                 console.log("error zlapany!!!");
@@ -107,6 +105,11 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
         this.setState({
             redirect: true
         });
+    }
+
+    onChangeSlot = (e: any) => {
+        console.log("found!!!!!" + e.target.value);
+        this.setState({pickedSlot: e.target.value})
     }
 
     componentDidMount() {
@@ -140,13 +143,23 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
         }
     }
 
+    toggleClose = () => {
+        this.setState({showPopUp: false})
+    }
+
+
     render() {
+        if (this.state.showPopUp) {
+            const msg = "Zapisałeś się na badanie w " + this.state.city + " dnia " + this.state.date + " o godzinie " + this.state.pickedSlot + " , odpowiedni punkt skontaktuję się z tobą drogą mailową. Dziekujemy!";
+            return (<Popup text={msg} closePopup={this.toggleClose}/>);
+        }
         let name: string = "";
         let surName: string = "";
         let email: string = "";
         let phone: string = "";
         let fieldRO = true;
-        let fieldRO2 = this.state.freeSlots.length === 0
+        const slots = this.state.freeSlots === undefined ? [] : this.state.freeSlots;
+        // let fieldRO2 = this.state.freeSlots.length === 0
         if (this.state.userExt !== undefined) {
             //@ts-ignore
             const extUser: UserExtd = this.state.userExt;
@@ -174,10 +187,6 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
             <div className="title-space"></div>
 
 
-
-
-
-            <form onSubmit={this.onSubmit}>
               <div className="wizyta-dane-input">
                      <div className="wizyta-dane-input-name">
                             <label htmlFor="name">NAZWA: <abbr title="required" aria-label="required">*</abbr></label>
@@ -185,7 +194,6 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
                             <label htmlFor="email">EMAIL: <abbr title="required" aria-label="required">*</abbr></label>
                             <div className="space-between-input"></div>
                             <label htmlFor="phone">TELEFON:</label>
-
 
                      </div>
                      <div className="wizyta-dane-input-value">
@@ -211,46 +219,44 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
                             placeholder="podaj adres"/> */}
                      </div>
               </div>
-              
               <div className="title-space"></div>
               <div className="title-space"></div>
-
               <div className="wizyta-dane">
                      <p className="wizyta-dane-headers">WYBIERZ TERMIN WIZYTY</p>
               </div>
-
               <div className="title-space"></div>
-
               <div className="wizyta-dane-input">
                      <div className="wizyta-dane-input-name">
                             <label htmlFor="city">MIASTO: <abbr title="required" aria-label="required">*</abbr></label>
                             <div className="space-between-input"></div>
                             <label htmlFor="dateCheck">DATA: <abbr title="required" aria-label="required">*</abbr></label>
                      </div>
-                     <div className="wizyta-dane-input-value">
-                     <input onChange={this.onChange} className="name-input" type="text" name="city" id="city" placeholder="podaj miasto" required/>
-                     <div className="space-between-input"></div>
-                     <input onChange={this.onChange} className="name-input" type="date" name="date" id="date" required/>
-                     <div className="space-between-input"></div>
+                  <div className="wizyta-dane-input-value">
+                      <input onChange={this.onChange} className="name-input" type="text" name="city" id="city"
+                             placeholder="podaj miasto" required/>
+                      <div className="space-between-input"></div>
+                      <input onChange={this.onChange} className="name-input" type="date" name="date" id="date"
+                             required/>
+                      <div className="space-between-input"></div>
 
+                      <button name="findSlot" onClick={this.findSlot} className="form-button-znajdz">Znajdź wolny slot
+                      </button>
+                      {/* <div> */}
+                      <label htmlFor="shpMethod">WYBIERZ WOLNY SLOT: <abbr title="required"
+                                                                           aria-label="required">*</abbr></label>
+                      <select value={this.state.pickedSlot} onChange={this.onChangeSlot} className="slotPick"
+                              id="browsers">u
+                          {slots.map(p => {
+                              //console.log("fieldRO: " + fieldRO2);
+                              return (
+                                  <option>{p[0]}:00</option>
+                              )
+                          })}
+                      </select>
+                      {/* </div> */}
 
-
-
-                    <button onClick={this.findSlot} className="form-button-znajdz">Znajdź wolny slot</button>
-                    {/* <div> */}
-                        <label htmlFor="shpMethod">WYBIERZ WOLNY SLOT: <abbr title="required" aria-label="required">*</abbr></label>
-                        <select onChange={this.onChange} className="slotPick" id="browsers">u
-                            {this.state.freeSlots.map(p => {
-                                console.log("fieldRO: " + fieldRO2);
-                                return (
-                                    <option>{p[0]}:00</option>
-                                )
-                            })}
-                        </select>
-                    {/* </div> */}
-                    
-                    <div className="title-space"></div>
-                    <div className="title-space"></div>
+                      <div className="title-space"></div>
+                      <div className="title-space"></div>
 
 
                     {/* <div className="form-buttons">
@@ -268,13 +274,13 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
 
               {/* <div className="title-space"></div> */}
               {/* <div className="title-space"></div> */}
-
-              <div className="form-buttons">
-                        <input readOnly={fieldRO2} type="submit" className="form-button-submit" value="ZAPISZ SIĘ"/>
+                <form onSubmit={this.onSubmit}>
+                    <div className="form-buttons">
+                        <input type="submit" className="form-button-submit" value="ZAPISZ SIĘ"/>
                         <a href="" className="form-button-cancel">ANULUJ</a>
-              </div>
+                    </div>
 
-       </form>
+                </form>
 
 
 
