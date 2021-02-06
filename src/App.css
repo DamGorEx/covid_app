@@ -362,7 +362,12 @@ abbr {
     .nameInput,
     .surnameInput,
     .dateFromInput,
-    .dateToInput{
+    .dateToInput {
         width: 300px;
     }
+}
+
+.slotPick {
+    min-height: 40px;
+    min-width: 100px;
 }

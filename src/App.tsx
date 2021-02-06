@@ -22,6 +22,7 @@ export default class App extends React.Component {
         // let enqueueSnackbar = useSnackbar();
         this.setState({user: undefined});
         localStorage.removeItem("user");
+        localStorage.removeItem("logInfo");
         // enqueueSnackbar.closeSnackbar('You have been logged out!');
     }
     Home = () => (
@@ -112,10 +113,12 @@ export default class App extends React.Component {
     render() {
         if (!this.state.user) {
             const user = localStorage.getItem("user");
+            console.log("user local" + user);
             if (user != null) {
                 this.setState({user: JSON.parse(user)});
             }
         }
+        // @ts-ignore
         return (
             <Router>
                 <div>
@@ -125,7 +128,7 @@ export default class App extends React.Component {
                         <Route path="/feed" component={CovidFeed}></Route>
                         <Route path="/news" component={CovidNews}></Route>
                         <Route path="/shop" component={CovidShop}></Route>
-                        <Route path="/medicalcheck" component={FormMedicalCheck}></Route>
+                        <Route path="/medicalCheck" render={() => <FormMedicalCheck user={this.state.user!}/>}/>
                         <Route path="/editdata" component={FormEditUserData}></Route>
                         <Route path="/panel" render={() => <Panel user={this.state.user!}/>}/>
                         <Route path="/login" render={() => <Login setUser={(u) => {

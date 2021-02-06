@@ -55,7 +55,6 @@ class ShopSummary extends React.Component {
                 street: this.state.street,
                 zipcode: this.state.zipcode,
                 city: this.state.city
-
             },
             shpMethod: this.state.shpMethod
         };

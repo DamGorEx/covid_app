@@ -23,37 +23,30 @@ export default class MenuBar extends React.Component<MenuBarProps> {
     }
 
     render() {
-
-
         // @ts-ignore
         return (
-<body>
+          <body>
             <div>
-                <div className="backgroundimg">
-                    <div className="menu">
-                            {/* <Nav > */}
-                                <div className="option-header">
-                                    <Nav.Link href="news"><div className="option-header-inner">COVID NEWS</div></Nav.Link>
-                                </div>
-                                <div className="option-header">
-                                    <Nav.Link href="shop"><div className="option-header-inner">COVID SHOPS</div></Nav.Link>
-                                </div>
-                                <div className="option-header">
-                                    <Nav.Link href="medicalcheck"><div className="option-header-inner">UMÓW WIZYTĘ</div></Nav.Link>
-                                </div>
+                <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
+                    <Navbar.Brand>
+                        <img src={cov_logo} width="40" height="40"></img>
+                    </Navbar.Brand>
+                    <Navbar.Brand href="/">Portal Covid</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="mr-auto">
+                            <Nav.Link href="feed">Covid feed</Nav.Link>
+                            <Nav.Link href="news">Covid news</Nav.Link>
+                            <Nav.Link href="shop">Covid shop</Nav.Link>
 
-                            {/* </Nav> */}
-                        
+                        </Nav>
+                        <Nav>
+                            {this.props.user && <Nav.Link href="medicalcheck"> Zapis na badania</Nav.Link>}
 
-                        <div className="main-header">
-                            <Navbar.Brand href="/" >
-                                <div className="main-header-inner">PORTAL COVID</div>
-                            </Navbar.Brand>
-                        </div>
+                            {this.props.user && <Nav.Link href="editdata"> Edytuj dane</Nav.Link>}
+                            {this.props.user && <><Link to="/panel"
+                                                        className="nav-link"> {this.props.user.credentials.role} panel</Link>
 
-                        {/* <Nav> */}
-                        
-                            {this.props.user && <><Link to="/panel" className="nav-link"> {this.props.user.credentials.role} panel</Link>
                                 <Nav.Link onClick={this.onLogout}>Logout</Nav.Link></>}
                             
 							{!this.props.user && <><Link to="/login" className="nav-link"><div className="option-header-inner">ZALOGUJ SIĘ</div></Link>
@@ -69,9 +62,6 @@ export default class MenuBar extends React.Component<MenuBarProps> {
                                 <Nav.Link href="mybasket"><div className="option-header-inner"></div><RiShoppingBasketLine/></Nav.Link>
                             </div>
                         {/* </Nav> */}
-
-
-
                     </div>
                 </div>
             </div>

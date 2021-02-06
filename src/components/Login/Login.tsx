@@ -39,14 +39,15 @@ const Login = ({setUser}: UserProps) => {
 
     const handleLogin = async () => {
         try {
+            let logInfo = 'Basic ' + window.btoa(values.username + ':' + values.password);
             const resp = await fetch("http://localhost:8080/login", {
-                headers: {'Authorization': 'Basic ' + window.btoa(values.username + ':' + values.password)}
+                headers: {'Authorization': logInfo}
             });
             if (!resp.ok) {
                 setValues({...values, loginError: true});
                 enqueueSnackbar(`Wrong credentials!`, {variant: 'error'});
             }
-
+            localStorage.setItem("logInfo", logInfo);
             const json = await resp.json();
             localStorage.setItem("user", JSON.stringify(json));
             setUser(json);
