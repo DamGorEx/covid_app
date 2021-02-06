@@ -62,14 +62,25 @@ const Login = ({setUser}: UserProps) => {
     }
 
     return (
+<body> 
+
         <div>
-            <Container className="login-container col-md-5">
-                <Row className="justify-content-md-center">
+        <div className="wizyta-dane">
+              <p className="wizyta-dane-headers">LOGIN</p>
+            </div>
+            
+
+
+            <Container >
+            {/* className="login-container col-md-5" */}
+                {/* <Row className="justify-content-md-center">
                     <Col sm={6}>
                         <h1>Login</h1>
                         <hr/>
+
+
                     </Col>
-                </Row>
+                </Row> */}
                 <Row className="justify-content-md-center">
                     <Col sm={6}>
                         <FormControl>
@@ -125,7 +136,35 @@ const Login = ({setUser}: UserProps) => {
                 </Col>
             </Row>
         </Container>
-    </div>);
+    </div>
+
+    <div className="title-space"></div>
+    <div className="title-space"></div>
+
+    <div>
+          <div className="footer">
+              <div className="footerTop">
+                  CONTENT MANAGEMENT SYSTEM - PJATK
+              </div>
+
+              <div className="footerBottom">
+                <div className="footerBottomLeft">
+                    DOMINIKA ŁUGOWSKA <div className="pStyle3"></div>
+                    MICHELLE HEROK <div className="pStyle3"></div>
+                    DAMIAN GORAJ <div className="pStyle3"></div>
+                    MARCIN CHOJNACKI
+                </div>
+                <div className="footerBottomRight">
+                    PJATK <div className="pStyle3"></div>
+                    Koszykowa 86,<div className="pStyle3"></div>
+                    02-008 Warszawa
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+</body>);
 
 }
 

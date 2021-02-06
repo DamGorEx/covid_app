@@ -42,7 +42,7 @@ export default class MenuBar extends React.Component<MenuBarProps> {
                         {/* <Nav>  this.props.user && */}
 
                         <div className="option-header-hidden">
-                                { <Nav.Link href="medicalcheck"><div className="option-header-inner"> BADANIA</div></Nav.Link>}
+                                {this.props.user && <Nav.Link href="medicalcheck"><div className="option-header-inner"> BADANIA</div></Nav.Link>}
                         </div>
                     
                             <div className="main-header">
@@ -55,10 +55,9 @@ export default class MenuBar extends React.Component<MenuBarProps> {
 
                             {/* {this.props.user && <Nav.Link href="editdata"> Edytuj dane</Nav.Link>} */}
                             <div className="option-header-hidden">
-                            {this.props.user && <><Link to="/panel" className="nav-link"> {this.props.user.credentials.role} panel</Link>
-
-                            
-                                <Nav.Link onClick={this.onLogout}>Logout</Nav.Link></>}
+                                {this.props.user && <>
+                            {/* <Link to="/panel" className="nav-link"> {this.props.user.credentials.role} panel</Link> */}
+                                    <Nav.Link onClick={this.onLogout}><div className="option-header-inner">Logout</div></Nav.Link></>}
                             </div>
                             
 							{!this.props.user && <><Link to="/login" className="nav-link"><div className="option-header-inner">ZALOGUJ SIĘ</div></Link>

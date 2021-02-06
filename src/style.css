@@ -366,7 +366,8 @@ a.form-button-cancel:hover {
 
 .footerBottomRight {
     padding: 0px 30px 30px 200px;
-    text-align: center
+    text-align: center;
+    font-size: 24px;
 }
 
 a.footerOption {
@@ -425,4 +426,52 @@ a.footerOption {
 .koszyk-pasek-daneR {
     letter-spacing: 2px;
     font-size: 64px;
+}
+
+
+
+.text-basket {
+    background-color: white;
+    color: gray;
+    font-size: 32px;
+    text-align: center;
+    padding: 100px 100px 100px 100px;
+    font-family: 'SilkSerif-Light', serif;
+    font-weight: bold;
+}
+
+.summary-user-data-bck {
+    padding: 100px 35% 100px 35%;
+    background-color: white;
+    /* padding-left: 40%; */
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.name-block-summary {
+    font-size: 30px;
+    color: #414141;
+}
+
+
+.form-buttons {
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.form-button-submit-bsk {
+    background-color: rgba(0, 210, 0, 1);
+    border-radius: 20px;
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    width: 600px;
+}
+
+
+.form-button-submit-bsk:hover {
+    background-color: rgba(0, 170, 0, 1);
 }

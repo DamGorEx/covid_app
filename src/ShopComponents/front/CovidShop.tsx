@@ -64,26 +64,27 @@ class CovidShop extends React.Component {
 
 
 
-            <div className="footer">
+        <div>
+          <div className="footer">
               <div className="footerTop">
                   CONTENT MANAGEMENT SYSTEM - PJATK
               </div>
 
               <div className="footerBottom">
-                  <div className="footerBottomLeft">
-                      <a href="link1.html" className="footerOption"> LINK1 </a><div className="pStyle3"></div>
-                      <a href="link2.html" className="footerOption"> LINK2 </a><div className="pStyle3"></div>
-                      <a href="link3.html" className="footerOption"> LINK3 </a><div className="pStyle3"></div>
-                      <a href="link4.html" className="footerOption"> LINK4 </a><div className="pStyle3"></div>
-                  </div>
-                  <div className="footerBottomRight">
-                      DOMINIKA ŁUGOWSKA <div className="pStyle3"></div>
-                      MICHELLE HEROK <div className="pStyle3"></div>
-                      DAMIAN GORAJ <div className="pStyle3"></div>
-                      MARCIN CHOJNACKI
-                  </div>
+                <div className="footerBottomLeft">
+                    DOMINIKA ŁUGOWSKA <div className="pStyle3"></div>
+                    MICHELLE HEROK <div className="pStyle3"></div>
+                    DAMIAN GORAJ <div className="pStyle3"></div>
+                    MARCIN CHOJNACKI
+                </div>
+                <div className="footerBottomRight">
+                    PJATK <div className="pStyle3"></div>
+                    Koszykowa 86,<div className="pStyle3"></div>
+                    02-008 Warszawa
+                </div>
               </div>
           </div>
+        </div>
         </body>);
     }
 }

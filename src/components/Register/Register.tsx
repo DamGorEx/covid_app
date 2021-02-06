@@ -77,14 +77,21 @@ const Register = () => {
 
 
     return (
+        <body>
+        <div className="wizyta-dane">
+              <p className="wizyta-dane-headers">REGISTER</p>
+            </div>
+
+
+
         <div>
-            <Container className="register-container col-md-5">
-                <Row className="justify-content-md-center">
+            <Container >
+                {/* <Row className="justify-content-md-center">
                     <Col sm={6}>
                         <h1>Register</h1>
                         <hr/>
                     </Col>
-                </Row>
+                </Row> */}
                 <Row className="justify-content-md-center">
                     <Col sm={6}>
                         <TextField
@@ -178,6 +185,35 @@ const Register = () => {
                 </Row>
             </Container>
         </div>
+
+        <div className="title-space"></div>
+        <div className="title-space"></div>
+
+        <div>
+          <div className="footer">
+              <div className="footerTop">
+                  CONTENT MANAGEMENT SYSTEM - PJATK
+              </div>
+
+              <div className="footerBottom">
+                <div className="footerBottomLeft">
+                    DOMINIKA ŁUGOWSKA <div className="pStyle3"></div>
+                    MICHELLE HEROK <div className="pStyle3"></div>
+                    DAMIAN GORAJ <div className="pStyle3"></div>
+                    MARCIN CHOJNACKI
+                </div>
+                <div className="footerBottomRight">
+                    PJATK <div className="pStyle3"></div>
+                    Koszykowa 86,<div className="pStyle3"></div>
+                    02-008 Warszawa
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+
+        </body>
     )
 }
 
