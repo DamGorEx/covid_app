@@ -7,7 +7,6 @@ import {Redirect} from "react-router-dom";
 import 'reactjs-popup/dist/index.css';
 import Popup from "../front/Popup";
 
-
 class ShopSummary extends React.Component {
 
     state = {
@@ -92,134 +91,130 @@ class ShopSummary extends React.Component {
             <body>
 
 
-
             <div>
                 {/* <div className="summary-wrapper"> */}
-                    
-                    <div className="text-basket">
+
+                <div className="text-basket">
                     <Basket handleAdd={this.handleAdd} handleMinus={this.handleMinus} handleDelete={this.handleDelete}
                             prodToAdd={prToAdd} prInBasket={prInBasket}/>
-                    </div>
+                </div>
 
-                    <div className="wizyta-dane">
-                        <p className="wizyta-dane-headers">DANE ODBIORCY PRZESYŁKI</p>
-                    </div>
+                <div className="wizyta-dane">
+                    <p className="wizyta-dane-headers">DANE ODBIORCY PRZESYŁKI</p>
+                </div>
 
                 <div className="summary-user-data-bck">
-                        {/* <h1>Dane odbiorcy przesyłki</h1> */}
-                        <form onSubmit={this.onSubmit} className="order-form">
+                    {/* <h1>Dane odbiorcy przesyłki</h1> */}
+                    <form onSubmit={this.onSubmit} className="order-form">
 
 
-                            <div className="name-block-summary">
+                        <div className="name-block-summary">
 
-                        <div className="wizyta-dane-input-name">
-                                    <label htmlFor="name">IMIE: <abbr title="required"
+                            <div className="wizyta-dane-input-name">
+                                <label htmlFor="name">IMIE: <abbr title="required"
+                                                                  aria-label="required">*</abbr></label>
+                                <input onChange={this.onChange} className="name-input" type="text" name="name" id="name"
+                                       required/>
+                                <div className="title-space"></div>
+
+                                <label htmlFor="surname">NAZWISKO: <abbr title="required"
+                                                                         aria-label="required">*</abbr></label>
+                                <input onChange={this.onChange} className="name-input" type="text" name="surname"
+                                       id="surname"
+                                       required/>
+                                <div className="title-space"></div>
+
+                                {/* </div> */}
+
+
+                                {/* <div className="ship-block"> */}
+
+                                <label htmlFor="email">EMAIL: <abbr title="required"
                                                                     aria-label="required">*</abbr></label>
-                                    <input onChange={this.onChange} className="name-input" type="text" name="name" id="name"
-                                        required/>
-                                    <div className="title-space"></div>
-
-                                    <label htmlFor="surname">NAZWISKO: <abbr title="required"
-                                                                            aria-label="required">*</abbr></label>
-                                    <input onChange={this.onChange} className="name-input" type="text" name="surname"
-                                        id="surname"
-                                        required/>
-                                    <div className="title-space"></div>
-                                
-                                    {/* </div> */}
-
-
-
-
-                                    {/* <div className="ship-block"> */}
-
-                                    <label htmlFor="email">EMAIL: <abbr title="required"
-                                                                        aria-label="required">*</abbr></label>
-                                    <input onChange={this.onChange} className="name-input" type="text" name="email"
-                                        id="email"
-                                        />
-                                    <div className="title-space"></div>
-                                    <div>
-                                        <label htmlFor="phone">TELEFON:</label>
-                                        <input onChange={this.onChange} className="name-input" type="number"
-                                            name="phone"
-                                            id="phone"/>
-                                    </div>
-                                    <div className="title-space"></div>
-                        </div>
-
-                        <div className="wizyta-dane-input-name">
-                                    <label htmlFor="address">ULICA:</label>
-                                    <input onChange={this.onChange} className="name-input" type="text" name="street"
-                                        id="street"/>
-                                    <div className="title-space"></div>
-
-                                    <label htmlFor="zipcode">KOD POCZTOWY:</label>
-                                    <input onChange={this.onChange} className="name-input" type="text" name="zipcode"
-                                        id="zipcode"/>
-                                    <div className="title-space"></div>
-
-                                    <label htmlFor="city">MIASTO: <abbr title="required"
-                                                                        aria-label="required">*</abbr></label>
-                                    <input onChange={this.onChange} className="name-input" type="text" name="city" id="city"
-                                        required/>
-                                    <div className="title-space"></div>
-
-                                    <label htmlFor="shpMethod">METODA WYSYŁKI: <abbr title="required"
-                                                                                    aria-label="required">*</abbr></label>
-                                    <input onChange={this.onChange}className="name-input" list="browsers" name="shpMethod" id="shpMethod"/>
-                                    <datalist id="browsers">
-                                        {shpMethList.map(p => {
-
-                                            return (
-                                                <option value={p}/>
-                                            )
-                                        })}
-                                    </datalist>
-                        </div>
-
-                            
-                                    <div className="title-space"></div>
-                                    <div className="title-space"></div>
-                                    
-                                    <input type="submit" className="form-button-submit-bsk" value="ZAPISZ SIĘ"/>
+                                <input onChange={this.onChange} className="name-input" type="text" name="email"
+                                       id="email"
+                                />
+                                <div className="title-space"></div>
+                                <div>
+                                    <label htmlFor="phone">TELEFON:</label>
+                                    <input onChange={this.onChange} className="name-input" type="number"
+                                           name="phone"
+                                           id="phone"/>
                                 </div>
+                                <div className="title-space"></div>
+                            </div>
 
-                                
+                            <div className="wizyta-dane-input-name">
+                                <label htmlFor="address">ULICA:</label>
+                                <input onChange={this.onChange} className="name-input" type="text" name="street"
+                                       id="street"/>
+                                <div className="title-space"></div>
 
-                        </form>
+                                <label htmlFor="zipcode">KOD POCZTOWY:</label>
+                                <input onChange={this.onChange} className="name-input" type="text" name="zipcode"
+                                       id="zipcode"/>
+                                <div className="title-space"></div>
+
+                                <label htmlFor="city">MIASTO: <abbr title="required"
+                                                                    aria-label="required">*</abbr></label>
+                                <input onChange={this.onChange} className="name-input" type="text" name="city" id="city"
+                                       required/>
+                                <div className="title-space"></div>
+
+                                <label htmlFor="shpMethod">METODA WYSYŁKI: <abbr title="required"
+                                                                                 aria-label="required">*</abbr></label>
+                                <input onChange={this.onChange} className="name-input" list="browsers" name="shpMethod"
+                                       id="shpMethod"/>
+                                <datalist id="browsers">
+                                    {shpMethList.map(p => {
+
+                                        return (
+                                            <option value={p}/>
+                                        )
+                                    })}
+                                </datalist>
+                            </div>
+
+
+                            <div className="title-space"></div>
+                            <div className="title-space"></div>
+
+                            <input type="submit" className="form-button-submit-bsk" value="ZAPISZ SIĘ"/>
+                        </div>
+
+
+                    </form>
+                </div>
+
+
+                <div>
+                    <div className="footer">
+                        <div className="footerTop">
+                            CONTENT MANAGEMENT SYSTEM - PJATK
+                        </div>
+
+                        <div className="footerBottom">
+                            <div className="footerBottomLeft">
+                                DOMINIKA ŁUGOWSKA <div className="pStyle3"></div>
+                                MICHELLE HEROK <div className="pStyle3"></div>
+                                DAMIAN GORAJ <div className="pStyle3"></div>
+                                MARCIN CHOJNACKI
+                            </div>
+                            <div className="footerBottomRight">
+                                PJATK <div className="pStyle3"></div>
+                                Koszykowa 86,
+                                <div className="pStyle3"></div>
+                                02-008 Warszawa
+                            </div>
+                        </div>
                     </div>
-
-
-                    <div>
-                        <div className="footer">
-                            <div className="footerTop">
-                                CONTENT MANAGEMENT SYSTEM - PJATK
-                            </div>
-
-                            <div className="footerBottom">
-                                <div className="footerBottomLeft">
-                                    DOMINIKA ŁUGOWSKA <div className="pStyle3"></div>
-                                    MICHELLE HEROK <div className="pStyle3"></div>
-                                    DAMIAN GORAJ <div className="pStyle3"></div>
-                                    MARCIN CHOJNACKI
-                                </div>
-                                <div className="footerBottomRight">
-                                    PJATK <div className="pStyle3"></div>
-                                    Koszykowa 86,<div className="pStyle3"></div>
-                                    02-008 Warszawa
-                                </div>
-                            </div>
-                        </div>
-                        </div>
+                </div>
 
 
                 {/* </div> */}
             </div>
 
-</body>
-
-
+            </body>
 
 
         );

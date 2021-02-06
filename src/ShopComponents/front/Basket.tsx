@@ -1,6 +1,5 @@
 import ProductInBasket from "../interfaces/ProductInBasket";
 import {AiOutlineMinus, AiOutlinePlus, RiDeleteBin5Line} from "react-icons/all";
-import * as ShopUtils from "../utils/ShopUtils";
 import React from "react";
 import {Table} from "react-bootstrap";
 
@@ -40,7 +39,7 @@ export default class Basket extends React.Component<BasketProp> {
                             return (
                                 <tr
                                     // @ts-ignore.
-                                    aniMarker={(aniMarker !== 0 && index === callOwner) ? aniMarker :
+                                    aniMarker={(aniMarker !== 0 && index === callOwner) ? 1 :
                                         (p.name + p.qty === this.props.prodToAdd) ? 1 : 0}
                                     className="basket-table-row"
                                     onAnimationEnd={() => {

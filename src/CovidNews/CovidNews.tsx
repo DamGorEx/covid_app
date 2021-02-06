@@ -6,6 +6,7 @@ import CovidNewsTable from './CovidNewsTable';
 import CovidNewsChart from './CovidNewsChart';
 
 import CanvasJSReact from "./canvasjs.react";
+
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -38,8 +39,9 @@ class CovidNews extends React.Component {
 	
 		return(
       <body>
-
-        <CovidNewsDate date = {this.state.date} />
+      <iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="100%"
+              height="600px"></iframe>
+      <CovidNewsDate date={this.state.date}/>
         
         <div className="covid-global-data">
           <CovidGlobalData global = {this.state.global}/>
