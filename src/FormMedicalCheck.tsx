@@ -189,26 +189,29 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
 
               <div className="wizyta-dane-input">
                      <div className="wizyta-dane-input-name">
-                            <label htmlFor="name">NAZWA: <abbr title="required" aria-label="required">*</abbr></label>
-                            <div className="space-between-input"></div>
-                            <label htmlFor="email">EMAIL: <abbr title="required" aria-label="required">*</abbr></label>
-                            <div className="space-between-input"></div>
-                            <label htmlFor="phone">TELEFON:</label>
+                         <label htmlFor="name">NAZWA: <abbr title="required" aria-label="required">*</abbr></label>
+                         <div className="space-between-input"></div>
+                         <label htmlFor="email">EMAIL: <abbr title="required" aria-label="required">*</abbr></label>
+                         <div className="space-between-input"></div>
+                         <label htmlFor="phone">TELEFON:</label>
 
                      </div>
-                     <div className="wizyta-dane-input-value">
-                     <input readOnly={true} className="name-input" type="text" name="name" id="name" value={name} required/>
-                     <input value={surName} readOnly={true} className="name-input-nazwisko" type="text" name="surname" id="surname" required/>
-                     <div className="space-between-input"></div>
-                     <input value={email} readOnly={true} className="name-input" type="text" name="email"id="email"/>
-                     <div className="space-between-input"></div>
-                     <input value={phone} readOnly={true} className="name-input" type="number" name="phone" id="phone"/>
+                  <div className="wizyta-dane-input-value">
+                      <input readOnly={true} className="name-input2" type="text" name="name" id="name" value={name}
+                             required/>
+                      <input value={surName} readOnly={true} className="name-input-nazwisko2" type="text" name="surname"
+                             id="surname" required/>
+                      <div className="space-between-input"></div>
+                      <input value={email} readOnly={true} className="name-input2" type="text" name="email" id="email"/>
+                      <div className="space-between-input"></div>
+                      <input value={phone} readOnly={true} className="name-input2" type="number" name="phone"
+                             id="phone"/>
 
-                            {/* <input onChange={this.onChange} className="name-input" type="text" name="name" id="name" placeholder="podaj imie" required/> */}
-                            {/* <input onChange={this.onChange} className="name-input-nazwisko" type="text" name="surname" id="surname" placeholder="podaj nazwisko" required/> */}
-                            {/* <div className="space-between-input"></div> */}
-                            {/* <input onChange={this.onChange} className="name-input" type="date" name="date" id="date" placeholder="podaj date urodzenia" required/> */}
-                            {/* <div className="space-between-input"></div> */}
+                      {/* <input onChange={this.onChange} className="name-input" type="text" name="name" id="name" placeholder="podaj imie" required/> */}
+                      {/* <input onChange={this.onChange} className="name-input-nazwisko" type="text" name="surname" id="surname" placeholder="podaj nazwisko" required/> */}
+                      {/* <div className="space-between-input"></div> */}
+                      {/* <input onChange={this.onChange} className="name-input" type="date" name="date" id="date" placeholder="podaj date urodzenia" required/> */}
+                      {/* <div className="space-between-input"></div> */}
                             {/* <input onChange={this.onChange} className="name-input" type="text" name="email" id="email"
                             placeholder="podaj adres e-mail"/>
                             <div className="space-between-input"></div>
@@ -232,10 +235,10 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
                             <label htmlFor="dateCheck">DATA: <abbr title="required" aria-label="required">*</abbr></label>
                      </div>
                   <div className="wizyta-dane-input-value">
-                      <input onChange={this.onChange} className="name-input" type="text" name="city" id="city"
+                      <input onChange={this.onChange} className="name-input2" type="text" name="city" id="city"
                              placeholder="podaj miasto" required/>
                       <div className="space-between-input"></div>
-                      <input onChange={this.onChange} className="name-input" type="date" name="date" id="date"
+                      <input onChange={this.onChange} className="name-input2" type="date" name="date" id="date"
                              required/>
                       <div className="space-between-input"></div>
 

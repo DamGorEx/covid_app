@@ -192,13 +192,19 @@ body {
     width: 500px;
 }
 
+.name-input2 {
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
 ::placeholder {
     letter-spacing: 2px;
     opacity: 0.8;
 }
 
 .wizyta-dane-input-name {
-    
+
 }
 
 .wizyta-dane-input-value {
@@ -210,6 +216,13 @@ body {
     border-radius: 20px;
     border: 2px solid rgba(0, 0, 0, 0.2);
     width: 500px;
+}
+
+.name-input-nazwisko2 {
+    margin-left: 50px;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    width: 400px;
 }
 
 .form-buttons {
@@ -287,8 +300,6 @@ a.form-button-cancel:hover {
     padding: 90px;
     padding-top: 100px;
 }
-
-
 
 #contentindex3 {
     display: grid;
