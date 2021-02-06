@@ -229,6 +229,19 @@ body {
     font-weight: bold;
 }
 
+.form-button-znajdz {
+    background-color: #414141;
+    border-radius: 20px;
+    margin: 0% 2% 0% 0%;
+    width: 500px;
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+
 .form-button-submit:hover {
     background-color: rgba(0, 170, 0, 1);
 }

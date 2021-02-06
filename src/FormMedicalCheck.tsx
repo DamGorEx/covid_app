@@ -161,8 +161,131 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
         if (this.state.logginErr) return (<Popup text='Wylogowałes się!' closePopup={this.togglePopup.bind(this)}/>)
         return (
         <body> 
-            <div>
-            <main className="mainForm">
+            <div id="container">
+
+            <div className="text-welcome">
+                ZAPISZ SIĘ NA BADANIA
+            </div>
+
+            <div className="wizyta-dane">
+              <p className="wizyta-dane-headers">DANE PERSONALNE</p>
+            </div>
+
+            <div className="title-space"></div>
+
+
+
+
+
+            <form onSubmit={this.onSubmit}>
+              <div className="wizyta-dane-input">
+                     <div className="wizyta-dane-input-name">
+                            <label htmlFor="name">NAZWA: <abbr title="required" aria-label="required">*</abbr></label>
+                            <div className="space-between-input"></div>
+                            <label htmlFor="email">EMAIL: <abbr title="required" aria-label="required">*</abbr></label>
+                            <div className="space-between-input"></div>
+                            <label htmlFor="phone">TELEFON:</label>
+
+
+                     </div>
+                     <div className="wizyta-dane-input-value">
+                     <input readOnly={true} className="name-input" type="text" name="name" id="name" value={name} required/>
+                     <input value={surName} readOnly={true} className="name-input-nazwisko" type="text" name="surname" id="surname" required/>
+                     <div className="space-between-input"></div>
+                     <input value={email} readOnly={true} className="name-input" type="text" name="email"id="email"/>
+                     <div className="space-between-input"></div>
+                     <input value={phone} readOnly={true} className="name-input" type="number" name="phone" id="phone"/>
+
+                            {/* <input onChange={this.onChange} className="name-input" type="text" name="name" id="name" placeholder="podaj imie" required/> */}
+                            {/* <input onChange={this.onChange} className="name-input-nazwisko" type="text" name="surname" id="surname" placeholder="podaj nazwisko" required/> */}
+                            {/* <div className="space-between-input"></div> */}
+                            {/* <input onChange={this.onChange} className="name-input" type="date" name="date" id="date" placeholder="podaj date urodzenia" required/> */}
+                            {/* <div className="space-between-input"></div> */}
+                            {/* <input onChange={this.onChange} className="name-input" type="text" name="email" id="email"
+                            placeholder="podaj adres e-mail"/>
+                            <div className="space-between-input"></div>
+                            <input onChange={this.onChange} className="name-input" type="number" name="phone" id="phone"
+                            placeholder="podaj numer telefonu"/>
+                            <div className="space-between-input"></div>
+                            <input onChange={this.onChange} className="name-input" type="text" name="street" id="street"
+                            placeholder="podaj adres"/> */}
+                     </div>
+              </div>
+              
+              <div className="title-space"></div>
+              <div className="title-space"></div>
+
+              <div className="wizyta-dane">
+                     <p className="wizyta-dane-headers">WYBIERZ TERMIN WIZYTY</p>
+              </div>
+
+              <div className="title-space"></div>
+
+              <div className="wizyta-dane-input">
+                     <div className="wizyta-dane-input-name">
+                            <label htmlFor="city">MIASTO: <abbr title="required" aria-label="required">*</abbr></label>
+                            <div className="space-between-input"></div>
+                            <label htmlFor="dateCheck">DATA: <abbr title="required" aria-label="required">*</abbr></label>
+                     </div>
+                     <div className="wizyta-dane-input-value">
+                     <input onChange={this.onChange} className="name-input" type="text" name="city" id="city" placeholder="podaj miasto" required/>
+                     <div className="space-between-input"></div>
+                     <input onChange={this.onChange} className="name-input" type="date" name="date" id="date" required/>
+                     <div className="space-between-input"></div>
+
+
+
+
+                    <button onClick={this.findSlot} className="form-button-znajdz">Znajdź wolny slot</button>
+                    {/* <div> */}
+                        <label htmlFor="shpMethod">WYBIERZ WOLNY SLOT: <abbr title="required" aria-label="required">*</abbr></label>
+                        <select onChange={this.onChange} className="slotPick" id="browsers">u
+                            {this.state.freeSlots.map(p => {
+                                console.log("fieldRO: " + fieldRO2);
+                                return (
+                                    <option>{p[0]}:00</option>
+                                )
+                            })}
+                        </select>
+                    {/* </div> */}
+                    
+                    <div className="title-space"></div>
+                    <div className="title-space"></div>
+
+
+                    {/* <div className="form-buttons">
+                        <input readOnly={fieldRO2} type="submit" className="form-button-submit" value="ZAPISZ SIĘ"/>
+                        <a href="" className="form-button-cancel"> ANULUJ</a>
+                    </div> */}
+
+
+                            {/* <input onChange={this.onChange} className="name-input" type="text" name="city" id="city" placeholder="podaj miasto" required/> */}
+                            {/* <div className="space-between-input"></div> */}
+                            {/* <input onChange={this.onChange} className="name-input" type="date" name="dateFrom" id="dateFrom" required/> */}
+                            {/* <input onChange={this.onChange} className="name-input-nazwisko" type="date" name="dateTo" id="dateTo" required/> */}
+                     </div>
+              </div>
+
+              {/* <div className="title-space"></div> */}
+              {/* <div className="title-space"></div> */}
+
+              <div className="form-buttons">
+                        <input readOnly={fieldRO2} type="submit" className="form-button-submit" value="ZAPISZ SIĘ"/>
+                        <a href="" className="form-button-cancel">ANULUJ</a>
+              </div>
+
+       </form>
+
+
+
+
+
+
+
+
+
+            
+            {/* <main className="mainForm">
                 <form onSubmit={this.onSubmit} className="formMedical">
                     <h1 className="headerMedical"> Zapisz się na badania</h1>
                     <h2 className="header2"> Dane personalne</h2>
@@ -206,11 +329,11 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
                         <a href="" className="formButtonCancel"> Anuluj</a>
                     </div>
                 </form>
-            </main>
+            </main> */}
 
 
 
-       
+        <div>
           <div className="footer">
               <div className="footerTop">
                   CONTENT MANAGEMENT SYSTEM - PJATK
@@ -232,6 +355,10 @@ export default class CovidMedicalCheck extends React.Component<PanelProps> {
               </div>
           </div>
         </div>
+        </div>
+
+
+
       </body>);
     }
 }

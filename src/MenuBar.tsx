@@ -39,10 +39,10 @@ export default class MenuBar extends React.Component<MenuBarProps> {
                             <Nav.Link href="shop"><div className="option-header-inner">COVID SHOPS</div></Nav.Link>
                         </div>
                         {/* </Nav> */}
-                        {/* <Nav>  */}
+                        {/* <Nav>  this.props.user && */}
 
                         <div className="option-header-hidden">
-                                {this.props.user && <Nav.Link href="medicalcheck"><div className="option-header-inner"> BADANIA</div></Nav.Link>}
+                                { <Nav.Link href="medicalcheck"><div className="option-header-inner"> BADANIA</div></Nav.Link>}
                         </div>
                     
                             <div className="main-header">
