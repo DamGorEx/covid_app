@@ -13,7 +13,7 @@ body {
     grid-column-start: 1;
     grid-column-end: 9;
     display: grid;
-    grid-template-columns: 9% 9% 10% 38% 9% 11% 9% 5%;
+    grid-template-columns: 9% 10% 7% 44% 7% 9% 11% 3%;
     /* grid-template-columns: auto auto auto auto auto auto auto auto; */
     background: rgba(0, 0, 0, 0.5);
     letter-spacing: 1px;
@@ -69,6 +69,20 @@ body {
     background: rgba(0, 0, 0, 0.5);
 }
 
+.option-header-hidden {
+    text-align: center;
+}
+
+.option-header-basket {
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.option-header-basket:hover {
+    background-color: rgba(210, 0, 0, 0.5);
+}
+
 .option-header-inner {
     font-size: 20px;
     color: white;
@@ -95,7 +109,7 @@ body {
     background-repeat: no-repeat;
     position: relative;
     background-size: cover;
-    height: 700px;
+    height: 600px;
 }
 
 #header {

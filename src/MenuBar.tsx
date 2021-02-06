@@ -28,34 +28,51 @@ export default class MenuBar extends React.Component<MenuBarProps> {
             <div>
                 <div className="backgroundimg">
                     <div className="menu">
-                    <Navbar.Brand href="/">Portal Covid</Navbar.Brand>
+                    
                     {/* <Navbar.Toggle aria-controls="responsive-navbar-nav"/> */}
                     {/* <Navbar.Collapse id="responsive-navbar-nav"> */}
-                        <Nav className="mr-auto">
-                            <Nav.Link href="feed">Covid feed</Nav.Link>
-                            <Nav.Link href="news">Covid news</Nav.Link>
-                            <Nav.Link href="shop">Covid shop</Nav.Link>
-                        </Nav>
-                        <Nav>
-                            {this.props.user && <Nav.Link href="medicalcheck"> Zapis na badania</Nav.Link>}
+                        {/* <Nav className="mr-auto"> */}
+                        <div className="option-header">
+                            <Nav.Link href="news"><div className="option-header-inner">COVID NEWS</div></Nav.Link>
+                        </div>
+                        <div className="option-header">
+                            <Nav.Link href="shop"><div className="option-header-inner">COVID SHOPS</div></Nav.Link>
+                        </div>
+                        {/* </Nav> */}
+                        {/* <Nav>  */}
 
-                            {this.props.user && <Nav.Link href="editdata"> Edytuj dane</Nav.Link>}
+                        <div className="option-header-hidden">
+                                {this.props.user && <Nav.Link href="medicalcheck"><div className="option-header-inner"> BADANIA</div></Nav.Link>}
+                        </div>
+                    
+                            <div className="main-header">
+                                <Navbar.Brand href="/" >
+                                <div className="main-header-inner">PORTAL COVID</div>
+                                </Navbar.Brand>
+                            </div>
+
+
+
+                            {/* {this.props.user && <Nav.Link href="editdata"> Edytuj dane</Nav.Link>} */}
+                            <div className="option-header-hidden">
                             {this.props.user && <><Link to="/panel" className="nav-link"> {this.props.user.credentials.role} panel</Link>
 
-                            <Nav.Link onClick={this.onLogout}>Logout</Nav.Link></>}
+                            
+                                <Nav.Link onClick={this.onLogout}>Logout</Nav.Link></>}
+                            </div>
                             
 							{!this.props.user && <><Link to="/login" className="nav-link"><div className="option-header-inner">ZALOGUJ SIĘ</div></Link>
 							<Link to="/register" className="nav-link"><div className="option-header-inner">ZAREJESTRUJ SIĘ</div></Link></>}
 							
-                            <div className="option-header">
+                            {/* <div className="option-header">
                                 {this.props.user && <Nav.Link href="editdata">
                                     <div className="option-header-inner">EDYTUJ DANE</div>
                                 </Nav.Link>}
-                            </div>
+                            </div> */}
 
-                        </Nav>
+                        {/* </Nav> */}
                         {/* <Nav> */}
-                        <div className="option-header">
+                        <div className="option-header-basket">
                             <Nav.Link href="mybasket">
                                 <div className="option-header-inner"></div>
                                 <RiShoppingBasketLine/></Nav.Link>

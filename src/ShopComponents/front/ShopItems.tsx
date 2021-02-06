@@ -11,7 +11,7 @@ export const shopItems =
             cat: "mask"
         },
         {
-            Name: "ARTYKUŁY DO DEZYNFEKCJI",
+            Name: "DEZYNFEKCJA",
             ikon: <GiSpiralBottle/>,
             cName: "nav-text2",
             cat: "hygiene_products"
